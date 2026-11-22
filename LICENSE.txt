@@ -1,0 +1,22 @@
+Flow - Freeware License
+
+Copyright (c) 2026 kodair918-del. All rights reserved.
+
+Permission is granted to use Flow free of charge, on any number of your own computers,
+and to share the unmodified package (the zip and the installer scripts) with others,
+provided that this notice stays with it. Flow may not be sold, and the files may not
+be modified and redistributed as another product.
+
+The source code is not part of this license and is not distributed.
+
+Scene packs (pack.json files) that you or an AI make for Flow belong to their author.
+You may share them freely. The sample packs that come with Flow may be used and copied
+as the starting point of your own packs.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING
+FROM THE USE OF THE SOFTWARE.
+
+Flow に付属するもの（アプリ・インストールのスクリプト）は、無料で使え、変更せずに配れます。
+販売、改変しての再配布はできません。保証はありません。
+自分で（または AI と）作った景色パックは、作った人のものです。自由に配ってかまいません。

@@ -73,6 +73,14 @@ try
         $lnk.TargetPath = $tray
         $lnk.WorkingDirectory = $dir
         $lnk.Save()
+        foreach ($pair in @(@('Flow - on', '--on'), @('Flow - off', '--off')))
+        {
+            $lnk = $shell.CreateShortcut((Join-Path $menu ($pair[0] + '.lnk')))
+            $lnk.TargetPath = $tray
+            $lnk.Arguments = $pair[1]
+            $lnk.WorkingDirectory = $dir
+            $lnk.Save()
+        }
         $un = Join-Path $dir 'Uninstall.ps1'
         if (Test-Path $un)
         {
