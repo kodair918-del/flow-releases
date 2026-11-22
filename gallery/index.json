@@ -54,6 +54,15 @@
       "file": "sea-breeze.json",
       "sha256": "5c3cbfba716a693e24c2e0227af23becf41f76003ca962f7a6492961ca1faaac",
       "size": 1540
+    },
+    {
+      "id": "chimney-town",
+      "name": "煙突のある住宅街",
+      "author": "Flow gallery",
+      "description": "煙突から煙の出る、夜の住宅街。",
+      "file": "chimney-town.json",
+      "sha256": "861f93a2b6a42b323896ea5b072465e5cfe093b0adc8d3a4f5fd1bd54146d7db",
+      "size": 2612
     }
   ]
 }
