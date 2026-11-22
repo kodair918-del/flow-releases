@@ -6,6 +6,8 @@
 
 *Flow draws pixel-art scenery on your wallpaper and on the taskbar (Dock on Mac): stars, snow, rain, fireflies, sakura, clouds, aurora, meteors, fog, lanterns, rivers, sea, mountains, a city, a forest... A schedule changes the scene every two hours, "random" mixes matching pairs, and you can add your own scenes with a single text file. Free. Windows 10/11 and macOS 13+.*
 
+> 入れる前に: 署名のないアプリなので、何をするか・何をしないか・確かめ方を [**Flow は安全？（docs/TRUST.md）**](docs/TRUST.md) に全部書きました。
+
 ![デモ](docs/images/demo.gif)
 
 ![景色の例](docs/images/gallery.png)
