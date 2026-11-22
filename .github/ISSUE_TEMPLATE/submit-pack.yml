@@ -1,0 +1,49 @@
+name: 景色パックを投稿する
+description: 作った景色パックを、Flow のギャラリーに載せてもらうための投稿です
+title: "[パック投稿] "
+labels: ["pack-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ありがとうございます！ 作った景色パック（`pack.json`）を、Flow のギャラリーに載せてもらえます。
+
+        1. `flowpack check` で `RESULT: OK` になっていることを確かめておくと、早く進みます（[作り方のガイド](https://github.com/kodair918-del/flow-releases/blob/main/docs/SCENE-PACK-GUIDE.md)）。
+        2. 下の欄に書いて、送信してください。**自動で検査して、結果をこの Issue に返信します。** 直す所があれば、この Issue を編集すると、もう一度確認します。
+        3. 検査を通ったら、オーナーが見た目を確かめて、ギャラリーに載せます。
+  - type: input
+    id: pack_id
+    attributes:
+      label: ギャラリーでの名前（ID）
+      description: 半角の小文字・数字・ハイフンだけ、2〜40文字。例 `rainy-seaside`
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: 作者名
+      description: ギャラリーに表示されます（ニックネームでかまいません）
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: ひとことの紹介
+      description: 80文字以内。例 `夕立のあとの海辺。波打ち際に光が残ります。`
+    validations:
+      required: true
+  - type: textarea
+    id: pack_json
+    attributes:
+      label: pack.json の中身
+      description: ファイルの中身を、そのまま貼り付けてください（64KB まで）。
+      render: json
+    validations:
+      required: true
+  - type: checkboxes
+    id: agree
+    attributes:
+      label: 同意
+      options:
+        - label: このパックを、Flow のギャラリーで誰でも自由に使い・配ってよいことに同意します。自分が作ったもの（または配ってよいもの）です。
+          required: true

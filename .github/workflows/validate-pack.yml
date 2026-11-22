@@ -1,0 +1,51 @@
+name: validate-pack
+
+# A gallery submission (an issue made with the "景色パックを投稿する" form) is checked here. The issue text is only
+# read from the event file by the script; nothing from it is put into a command.
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    if: contains(github.event.issue.labels.*.name, 'pack-submission')
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pillow
+
+      - id: check
+        run: python .github/scripts/pack_issue.py check
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        continue-on-error: true
+        with:
+          name: preview
+          path: |
+            work/pics
+            work/preview.png
+
+      - name: Reply on the issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.number }}
+          RESULT: ${{ steps.check.outputs.result }}
+        run: |
+          for l in valid needs-fix approved pack-submission; do gh label create "$l" --force >/dev/null 2>&1 || true; done
+          gh issue comment "$ISSUE" --body-file work/report.md
+          if [ "$RESULT" = "valid" ]; then
+            gh issue edit "$ISSUE" --add-label valid --remove-label needs-fix || true
+          else
+            gh issue edit "$ISSUE" --add-label needs-fix --remove-label valid || true
+          fi

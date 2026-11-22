@@ -54,6 +54,7 @@ macOS 13 以降。Apple の署名はないので、スクリプトが警告を�
 | ![桜並木の朝](gallery/cherry-avenue.png) 桜並木の朝 | ![雪の夜の山小屋](gallery/snow-cabin.png) 雪の夜の山小屋 | ![蛍の草原](gallery/firefly-meadow.png) 蛍の草原 |
 | ![夕焼けと松林](gallery/sunset-pines.png) 夕焼けと松林 | ![夜の街](gallery/night-town.png) 夜の街 | ![海風の朝](gallery/sea-breeze.png) 海風の朝 |
 
+- **投稿する**: 作ったパックは、[投稿フォーム](https://github.com/kodair918-del/flow-releases/issues/new?template=submit-pack.yml)から送れます。自動で検査して結果を返信し、見た目を確かめたうえで、ギャラリーに載せます（載せるのはオーナーの承認のあとです）。
 - 作り方: [docs/SCENE-PACK-GUIDE.md](docs/SCENE-PACK-GUIDE.md)
 - **AI に作ってもらう**: [docs/PROMPT-FOR-AI.md](docs/PROMPT-FOR-AI.md) をそのまま AI に貼って、作りたい景色を書くだけ。検査ツール（`flowpack`）が間違いを日本語まじりで具体的に教えるので、AI に貼り戻せば直してくれます。
 - メニューの「追加パック → サンプルパックを入れる」で、見本が3つ入ります。

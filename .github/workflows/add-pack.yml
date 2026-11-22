@@ -1,0 +1,55 @@
+name: add-pack
+
+# Only the repository owner can approve: the owner puts the "approved" label on a submission and the pack is added
+# to the gallery (gallery/ID.json, gallery/ID.png and gallery/index.json), then the issue is closed.
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: gallery
+  cancel-in-progress: false
+
+jobs:
+  add:
+    if: >-
+      github.event.label.name == 'approved' &&
+      github.event.sender.login == github.repository_owner &&
+      contains(github.event.issue.labels.*.name, 'pack-submission')
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pillow
+
+      - id: add
+        run: python .github/scripts/pack_issue.py add
+        continue-on-error: true
+
+      - name: Publish and reply
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.number }}
+          RESULT: ${{ steps.add.outputs.result }}
+        run: |
+          if [ "$RESULT" = "added" ]; then
+            git config user.name "flow-gallery-bot"
+            git config user.email "flow-gallery-bot@users.noreply.github.com"
+            git add gallery
+            git commit -m "Gallery: add a pack from issue #$ISSUE"
+            git push
+            gh issue comment "$ISSUE" --body-file work/report.md
+            gh issue close "$ISSUE" --reason completed
+          else
+            gh issue comment "$ISSUE" --body-file work/report.md || true
+            gh issue edit "$ISSUE" --remove-label approved || true
+          fi
