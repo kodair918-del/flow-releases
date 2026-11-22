@@ -1,0 +1,33 @@
+{
+  "format": 1,
+  "name": "夕焼けと松林",
+  "author": "Flow examples",
+  "scenes": [
+    {
+      "id": "sunset",
+      "kind": "desk",
+      "title": "夕焼け",
+      "layers": [
+        { "type": "gradient", "top": "#2a1a5e", "bottom": "#d9786a", "from": 0, "to": 0.6 },
+        { "type": "gradient", "top": "#d9786a", "bottom": "#ffd27a", "from": 0.6, "to": 1 },
+        { "type": "orb", "x": 0.35, "y": 0.78, "radius": 140, "color": "#ffe9b0", "alpha": 0.8, "pulse": 0.3, "rate": 0.15 },
+        { "type": "particles", "count": 2, "size": 1, "shape": "dot", "color": ["#ffffff", "#ffd9b0"], "speed": [2, 5],
+          "angle": 0, "twinkle": 0.7, "y": [0, 0.35] },
+        { "type": "sprites", "rows": ["X.X", ".X."], "palette": { "X": "#2a1030" }, "count": 0.6, "speed": [22, 34],
+          "y": [0.2, 0.55], "scale": 1, "bob": 4 }
+      ]
+    },
+    {
+      "id": "pines-dusk",
+      "kind": "task",
+      "title": "夕暮れの松林",
+      "layers": [
+        { "type": "silhouette", "style": "spikes", "base": 0.82, "color": "#3a1f3a", "spacing": 26, "height": [0.25, 0.5],
+          "width": [10, 16], "seed": 3, "profile": [ { "amp": 0.05, "wavelength": 700, "phase": 1 } ] },
+        { "type": "silhouette", "style": "spikes", "base": 0.92, "color": "#12091a", "lit": "#5a2f4a", "spacing": 20,
+          "height": [0.35, 0.7], "width": [12, 20], "seed": 9, "profile": [ { "amp": 0.03, "wavelength": 400, "phase": 0 } ] }
+      ]
+    }
+  ],
+  "pairs": [ { "name": "夕焼けの松林", "desk": "sunset", "task": "pines-dusk" } ]
+}

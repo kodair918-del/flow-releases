@@ -1,0 +1,33 @@
+{
+  "format": 1,
+  "name": "夜の街",
+  "author": "Flow examples",
+  "scenes": [
+    {
+      "id": "moon-night",
+      "kind": "desk",
+      "title": "月夜",
+      "layers": [
+        { "type": "gradient", "top": "#04060f", "bottom": "#1a2550" },
+        { "type": "particles", "count": 4, "size": 1, "shape": "dot", "color": ["#ffffff", "#bfd8ff", "#ffe9a8"], "speed": [1, 3],
+          "angle": 0, "twinkle": 0.8, "twinkleRate": 1.5, "y": [0, 0.8] },
+        { "type": "particles", "count": 0.15, "size": 2, "shape": "plus", "color": "#ffffff", "speed": [1, 2], "angle": 0,
+          "twinkle": 0.9, "y": [0, 0.5] },
+        { "type": "orb", "x": 0.72, "y": 0.22, "radius": 70, "color": "#fff4c8", "alpha": 0.9, "pulse": 0.1, "rate": 0.08 }
+      ]
+    },
+    {
+      "id": "town-lights",
+      "kind": "task",
+      "title": "夜の街あかり",
+      "layers": [
+        { "type": "silhouette", "style": "blocks", "base": 0.85, "color": "#10162e", "spacing": 34, "height": [0.25, 0.6],
+          "width": [14, 26], "window": "#ffd070", "windowDensity": 0.35, "seed": 5,
+          "profile": [ { "amp": 0.02, "wavelength": 900, "phase": 0 } ] },
+        { "type": "silhouette", "style": "blocks", "base": 0.97, "color": "#070a18", "spacing": 40, "height": [0.3, 0.8],
+          "width": [18, 34], "window": "#ffb050", "windowDensity": 0.2, "seed": 11, "profile": [ { "amp": 0.01, "wavelength": 500 } ] }
+      ]
+    }
+  ],
+  "pairs": [ { "name": "月夜の街あかり", "desk": "moon-night", "task": "town-lights" } ]
+}

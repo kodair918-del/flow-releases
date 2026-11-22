@@ -47,6 +47,13 @@ macOS 13 以降。Apple の署名はないので、スクリプトが警告を�
 
 ![追加パックの例](docs/images/packs.png)
 
+- **ギャラリー**: メニューの「追加パック → ギャラリーから入れる」で、できあがったパックを1クリックで入れられます。人から受け取った `pack.json` は「ファイルから読み込む…」で入ります。
+
+| | | |
+|---|---|---|
+| ![桜並木の朝](gallery/cherry-avenue.png) 桜並木の朝 | ![雪の夜の山小屋](gallery/snow-cabin.png) 雪の夜の山小屋 | ![蛍の草原](gallery/firefly-meadow.png) 蛍の草原 |
+| ![夕焼けと松林](gallery/sunset-pines.png) 夕焼けと松林 | ![夜の街](gallery/night-town.png) 夜の街 | ![海風の朝](gallery/sea-breeze.png) 海風の朝 |
+
 - 作り方: [docs/SCENE-PACK-GUIDE.md](docs/SCENE-PACK-GUIDE.md)
 - **AI に作ってもらう**: [docs/PROMPT-FOR-AI.md](docs/PROMPT-FOR-AI.md) をそのまま AI に貼って、作りたい景色を書くだけ。検査ツール（`flowpack`）が間違いを日本語まじりで具体的に教えるので、AI に貼り戻せば直してくれます。
 - メニューの「追加パック → サンプルパックを入れる」で、見本が3つ入ります。

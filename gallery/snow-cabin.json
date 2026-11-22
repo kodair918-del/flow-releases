@@ -1,0 +1,18 @@
+{
+  "format": 1,
+  "name": "雪の夜の山小屋",
+  "author": "Flow gallery",
+  "scenes": [
+    { "id": "snow-aurora-night", "kind": "desk", "title": "雪とオーロラの夜", "layers": [
+      { "type": "gradient", "top": "#03061a", "bottom": "#10224a" },
+      { "type": "gradient", "top": "#1fbf8f", "bottom": "#2a8f9f", "from": 0.1, "to": 0.55, "alpha": 0.55, "soft": true },
+      { "type": "gradient", "top": "#8a5ad8", "bottom": "#5a3aa8", "from": 0.25, "to": 0.7, "alpha": 0.4, "soft": true },
+      { "type": "particles", "count": 4, "size": 1, "color": ["#ffffff", "#cfe6ff"], "speed": [1, 3], "angle": 0, "twinkle": 0.8, "y": [0, 0.5] },
+      { "type": "particles", "count": 6, "size": 2, "color": ["#ffffff", "#dfeeff"], "speed": [12, 30], "angle": 90, "sway": 8, "seed": 7 } ] },
+    { "id": "spruce-cabin", "kind": "task", "title": "針葉樹と小屋", "layers": [
+      { "type": "silhouette", "style": "spikes", "base": 0.9, "color": "#10241a", "lit": "#cfe6ff", "spacing": 22, "height": [0.5, 0.9], "width": [10, 18] },
+      { "type": "sprites", "rows": ["..RRRRRRRR..", ".RRRRRRRRRR.", "RRRRRRRRRRRR", ".WWWWWWWWWW.", ".WWYYWWWWDW.", ".WWYYWWWWDW.", ".WWWWWWWWDW."],
+        "palette": { "R": "#e8f0ff", "W": "#6b4630", "Y": "#ffd070", "D": "#3a2418" }, "count": 0.25, "speed": [0, 0], "y": [0.5, 0.9], "scale": 2 } ] }
+  ],
+  "pairs": [ { "name": "雪の夜の山小屋", "desk": "snow-aurora-night", "task": "spruce-cabin" } ]
+}

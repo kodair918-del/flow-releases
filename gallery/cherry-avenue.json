@@ -1,0 +1,15 @@
+{
+  "format": 1,
+  "name": "桜並木の朝",
+  "author": "Flow gallery",
+  "scenes": [
+    { "id": "spring-morning", "kind": "desk", "title": "春の朝の空", "layers": [
+      { "type": "gradient", "top": "#bfe3f6", "bottom": "#fbeaf0" },
+      { "type": "orb", "x": 0.75, "y": 0.2, "radius": 70, "color": "#fff6d0", "alpha": 0.8, "pulse": 0.1, "rate": 0.1 },
+      { "type": "particles", "count": 5, "size": 2, "color": ["#ffb7c9", "#ffffff", "#ffd0dc"], "speed": [10, 25], "angle": 70, "sway": 12, "swayRate": 1.2 } ] },
+    { "id": "cherry-street", "kind": "task", "title": "桜並木の通り", "layers": [
+      { "type": "silhouette", "style": "round", "base": 0.9, "color": "#f2a6bb", "trunk": "#5a3a2a", "spacing": 34, "height": [0.6, 0.9], "width": [20, 30], "seed": 4 },
+      { "type": "silhouette", "style": "smooth", "base": 0.93, "color": "#6aa05a" } ] }
+  ],
+  "pairs": [ { "name": "桜並木の朝", "desk": "spring-morning", "task": "cherry-street" } ]
+}
