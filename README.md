@@ -14,8 +14,9 @@ irm https://raw.githubusercontent.com/kodair918-del/flow-releases/main/install.p
 ## 対応
 
 - 壁紙: Windows 10 (1809) 以降の 64 ビット
-- タスクバーの景色: Taskbar.View.dll の版が合う Windows 11 だけ（版ごとにタスクバー内部の位置が違うため）。
-  合わない版では壁紙だけ動かし、タスクバーには触りません。対応する版は、更新で増えることがあります。
+- タスクバーの景色: Windows 11。XAML Diagnostics（Visual Studio の Live Visual Tree と同じ仕組み）でタスクバーを見つけるので、
+  Windows の版に依存せず、Explorer の再起動も要りません。動作を確かめた版は Taskbar.View.dll 2609.12001.100.0 です。
+  ほかの版で見つからなければ、タスクバーには何も変更せず、壁紙だけ動きます。
 
 ## アップデート
 

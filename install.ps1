@@ -90,25 +90,29 @@ try
         Start-Process -FilePath $tray -WorkingDirectory $dir
     }
 
-    # can the taskbar scenery run on this Windows?
+    # can the taskbar scenery run on this Windows? (Windows 11 has the XAML taskbar it attaches to)
     $view = ''
     $found = Get-ChildItem -Path (Join-Path $env:SystemRoot 'SystemApps') -Filter 'Taskbar.View.dll' -Recurse -ErrorAction SilentlyContinue |
         Select-Object -First 1
     if ($found) { $view = $found.VersionInfo.FileVersion }
-    $ok = $false
-    foreach ($v in @($info.taskbarViews)) { if ($v -eq $view) { $ok = $true } }
+    $ok = ([Environment]::OSVersion.Version.Build -ge 22000) -and [bool]$found
+    $checked = $false
+    foreach ($v in @($info.taskbarViews)) { if ($v -eq $view) { $checked = $true } }
 
     Write-Host ''
     Write-Host "Done. Flow $($info.version) is installed; its icon is in the notification area (next to the clock)."
     if ($ok)
     {
-        Write-Host 'The taskbar scenery and the wallpaper both work on this Windows.'
-        Write-Host 'The taskbar flickers once while it is set up (Explorer restarts).'
+        Write-Host 'Both the wallpaper and the taskbar scenery are on (the taskbar needs no restart).'
+        if (-not $checked)
+        {
+            Write-Host "Your taskbar build ($view) has not been tried yet. If the taskbar scenery does not appear,"
+            Write-Host 'the wallpaper still works and nothing on the taskbar is changed.'
+        }
     }
     else
     {
-        Write-Host "This Windows (taskbar build $view) is not supported for the taskbar scenery yet."
-        Write-Host 'The wallpaper works; the taskbar is left alone. Updates may add support.'
+        Write-Host 'The taskbar scenery needs Windows 11. The wallpaper works; the taskbar is left alone.'
     }
 }
 finally
