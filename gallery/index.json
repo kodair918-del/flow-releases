@@ -34,8 +34,8 @@
       "author": "Flow examples",
       "description": "夕焼けの空と、松林のシルエット。",
       "file": "sunset-pines.json",
-      "sha256": "0b7fef33b6aac0f311f0640680479b222957013d3ae3b7d6e61daf6365ab9f79",
-      "size": 1583
+      "sha256": "6dcfabaf640762928c6e079cb854332baa46fff9a8624f99ec6fd25e31ee4665",
+      "size": 1550
     },
     {
       "id": "night-town",
@@ -52,8 +52,8 @@
       "author": "Flow examples",
       "description": "朝の港。波と雲と、小さな船。",
       "file": "sea-breeze.json",
-      "sha256": "91e9fb5dc0afa7cf18ba425b88a580cc7dd22abf58718b9d55a1216bf142eb2b",
-      "size": 1573
+      "sha256": "5c3cbfba716a693e24c2e0227af23becf41f76003ca962f7a6492961ca1faaac",
+      "size": 1540
     }
   ]
 }
