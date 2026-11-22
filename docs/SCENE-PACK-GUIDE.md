@@ -110,8 +110,9 @@ flowpack install "C:\パックの置き場所\my-pack"          ← Flow に入�
 |---|---|---|
 | `top` ※必須 | 色 | 上の色 |
 | `bottom` ※必須 | 色 | 下の色 |
-| `from` | 0〜1（省略 0） | 塗り始め（割合） |
+| `from` | 0〜1（省略 0） | 塗り始め（割合）。`from` と `to` を省略すると全面 |
 | `to` | 0〜1（省略 1） | 塗り終わり。`from` より大きく |
+| `soft` | `true` / `false`（省略 `false`） | `true` にすると、帯の上下のふちがだんだん薄くなる（オーロラ・霧・もや用）。`alpha` と一緒に使う |
 
 ```json
 { "type": "gradient", "top": "#2a1a5e", "bottom": "#d9786a", "from": 0, "to": 0.6 }
@@ -165,10 +166,11 @@ desk シーンは**最初の1枚を、全面の gradient（from 0 〜 to 1、alp
 | キー | 範囲 | 意味 |
 |---|---|---|
 | `base` | 0〜1 | 縁（地面の線）の高さの基準（割合。大きいほど下） |
-| `profile` | 1〜6個の `{amp, wavelength, phase}` | 縁の起伏。`amp` 0〜0.6（高さの割合）、`wavelength` 20〜6000（px）、`phase` −100〜100。**`amp` と `wavelength` は必須** |
-| `style` | `smooth` `spikes` `blocks` | `smooth`＝なだらかな丘や山、`spikes`＝とがった木、`blocks`＝四角いビル |
+| `profile` | 1〜6個の `{amp, wavelength, phase}`（**省略可**。省略するとゆるい起伏になる） | 縁の起伏。`amp` 0〜0.6（高さの割合）、`wavelength` 20〜6000（px）、`phase` −100〜100。**`amp` と `wavelength` は必須** |
+| `style` | `smooth` `spikes` `round` `blocks` | `smooth`＝なだらかな丘や山、`spikes`＝とがった木（針葉樹）、`round`＝丸い木（桜・広葉樹。`color` が樹冠、`trunk` が幹）、`blocks`＝四角いビル |
+| `trunk` | 色（省略可） | `round` の幹の色（省略すると `color` と同じ） |
 | `color` ※必須 | 色 | 塗る色 |
-| `lit` | 色（省略可） | 縁の線の色（明るい稜線） |
+| `lit` | 色（省略可） | 縁（地面の線）に引く1ドットの線の色。明るい稜線や雪のふち |
 | `spacing` | 6〜400 | 木やビルの間隔（px） |
 | `height` | `[最小, 最大]`（0.01〜0.9） | 木・ビルの高さ（帯の高さに対する割合） |
 | `width` | `[最小, 最大]`（2〜300） | 木・ビルの幅（px） |
@@ -214,6 +216,27 @@ desk シーンは**最初の1枚を、全面の gradient（from 0 〜 to 1、alp
 ```
 
 ---
+
+## 6-7. 見栄えのレシピ（数字の目安。そのまま使ってよい）
+- **桜の花びら**: `particles` `count` 5・`size` 2・`color` ["#ffb7c9", "#ffffff", "#ffd0dc"]・`speed` [10, 25]・`angle` 70・`sway` 12・`swayRate` 1.2
+- **雪**: `particles` `count` 6・`size` 1 か 2・`color` ["#ffffff", "#dfeeff"]・`speed` [12, 30]・`angle` 90・`sway` 8
+- **雨**: `particles` `count` 3・`size` 1・`shape` "streak"・`length` 16・`color` "#b8c8e0"・`alpha` 0.7・`speed` [300, 450]・`angle` 100
+- **蛍**: **desk に入れる**（task の帯は細くて見えない）。`particles` `count` 2・`size` 2・`color` ["#e8ff7a", "#c8ff60"]・`speed` [2, 8]・`twinkle` 0.9・`sway` 10・`y` [0.5, 1]
+- **星**: `particles` `count` 4・`size` 1・`color` ["#ffffff", "#bfd8ff"]・`speed` [1, 3]・`angle` 0・`twinkle` 0.8・`y` [0, 0.8]
+- **オーロラ・霧・もや（ふちがぼやけた帯）**: `gradient` に **`"soft": true`** を付け、`from`/`to` で帯の高さを決め、`alpha` を 0.3〜0.6 にして2〜3枚重ねる。例: `{ "type": "gradient", "top": "#1fbf8f", "bottom": "#2a8f9f", "from": 0.1, "to": 0.55, "alpha": 0.55, "soft": true }`（緑）と、紫 `"#8a5ad8"`→`"#5a3aa8"`・`from` 0.25・`to` 0.7・`alpha` 0.4。霧なら白 `"#ffffff"`・`alpha` 0.2・`from` 0.6・`to` 0.95
+- **遠くの山並み**: `silhouette` `style` "smooth"・`base` 0.6〜0.75・`profile` を **`amp` 0.2〜0.3・`wavelength` 600〜1200** にして山を大きく起伏させる（`amp` が小さいとただの丘になる）。色は空に近い明るめ。手前の山や草むらは暗く・`base` 大きめ。**`smooth` では `height` `width` `spacing` は使われない**（`spikes` と `blocks` だけが使う）
+- **桜並木・広葉樹の並木（task）**: `silhouette` を2枚。木: `style` "round"・`base` 0.9・`color` "#f2a6bb"（樹冠）・`trunk` "#5a3a2a"（幹）・`spacing` 34・`height` [0.6, 0.9]・`width` [20, 30]。足もとの草: `style` "smooth"・`base` 0.93・`color` "#6aa05a"
+- **ぽつんと1軒の小屋（task）**: `blocks` は全体に並ぶので使わず、**`sprites` で絵を置く**。`speed` [0, 0]（動かさない）・`count` 0.25（1つだけ）・`y` [0.5, 0.9]・`scale` 2。例: `"rows": ["..RRRRRRRR..", ".RRRRRRRRRR.", "RRRRRRRRRRRR", ".WWWWWWWWWW.", ".WWYYWWWWDW.", ".WWYYWWWWDW.", ".WWWWWWWWDW."]`・`"palette": {"R": "#4a2a20", "W": "#6b4630", "Y": "#ffd070", "D": "#3a2418"}`
+- **針葉樹の森（task）**: `silhouette` `style` "spikes"・`height` [0.5, 0.9]・`width` [10, 18]・`spacing` 22
+- **街の灯り（task）**: `silhouette` `style` "blocks"・`window` "#ffd070"・`windowDensity` 0.35
+- **水（task）**: `wave` 2〜3枚。奥 `y` 0.55・手前 `y` 0.9。奥ほど薄く・遅く・波長を長く
+
+## 6-8. よくある失敗（見た目）
+- **`wave` は、水面から下を底まで全部塗ります。** 空の帯には使わない（空が塗りつぶされる）。空の帯は `soft` の gradient で。
+- task の帯はとても細いので、**木やビルの `height` は 0.5〜0.9 くらいに大きく**しないと見えない。
+- 粒は **`count` を小さくしすぎない**（花びら・雪は 3〜6）。大きさは `size` 2 くらいが見やすい。
+- sprites の `rows` は、**各行を同じ文字数にそろえる**（足りない所は `.`）。
+- desk に地面を描かない（画面に地面が2つに見える）。地面は task の仕事。
 
 ## 7. desk と task の作り分け
 
@@ -264,7 +287,7 @@ desk シーンは**最初の1枚を、全面の gradient（from 0 〜 to 1、alp
 
 ## 10. 見栄えのコツ
 
-- **色は少なく**。1つのシーンで 4〜6 色に絞ると、ドット絵らしく落ち着く。
+- **色は少なく**。シーンの中心になる色は 4〜6 色に絞ると、ドット絵らしく落ち着く（オーロラのように色を重ねる景色は、増えてかまわない）。
 - **層を重ねる**。奥（明るく・遅く・小さく）→ 手前（暗く・速く・大きく）。
 - 動きは**ゆっくり**。壁紙は毎日見るので、`speed` は小さめ（粒 1〜10、雲 6〜12、波 20〜40）。
 - 時刻で色を変えたい所は `@dark` `@mid` `@light` `@spark` にする。
