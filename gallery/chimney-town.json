@@ -19,7 +19,7 @@
           "..WYYWWWDDW.",
           "..WWWWWWWWW."],
         "palette": { "S": "#9aa6c0", "C": "#8a4a3a", "B": "#5e3028", "R": "#4a2e48", "W": "#3a3550", "Y": "#ffd070", "D": "#241c30" },
-        "count": 2.6, "speed": [0, 0], "y": [0.5, 0.55], "scale": 1, "seed": 3 },
+        "count": 2.6, "speed": [0, 0], "y": [0.5, 0.97], "stand": true, "scale": 1, "seed": 3 },
       { "type": "sprites", "rows": [
           ".S..........",
           "SS..........",
@@ -33,7 +33,7 @@
           ".WDDWWYYYW..",
           ".WWWWWWWWW.."],
         "palette": { "S": "#9aa6c0", "C": "#8a4a3a", "B": "#5e3028", "R": "#2e4a5e", "W": "#3a3a58", "Y": "#ffd070", "D": "#241c30" },
-        "count": 2.3, "speed": [0, 0], "y": [0.5, 0.55], "scale": 1, "seed": 29 },
+        "count": 2.3, "speed": [0, 0], "y": [0.5, 0.97], "stand": true, "scale": 1, "seed": 29 },
       { "type": "sprites", "rows": [
           "...S........",
           "..SS........",
@@ -47,7 +47,7 @@
           ".WYYWDDWYYW.",
           ".WWWWWWWWWW."],
         "palette": { "S": "#9aa6c0", "C": "#8a4a3a", "B": "#5e3028", "R": "#5a3a2a", "W": "#40364a", "Y": "#ffd070", "D": "#241c30" },
-        "count": 2.0, "speed": [0, 0], "y": [0.5, 0.55], "scale": 1, "seed": 57 },
+        "count": 2.0, "speed": [0, 0], "y": [0.5, 0.97], "stand": true, "scale": 1, "seed": 57 },
       { "type": "particles", "count": 2, "size": 1, "shape": "dot", "color": ["#8e98b0", "#aab4c8"], "alpha": 0.55,
         "speed": [5, 11], "angle": 270, "sway": 7, "swayRate": 0.7, "twinkle": 0.3, "y": [0.1, 0.7], "seed": 5 },
       { "type": "silhouette", "style": "smooth", "base": 0.96, "color": "#0a0e1c", "lit": "#2a3354",
