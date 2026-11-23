@@ -3,58 +3,252 @@
   "name": "煙突のある住宅街",
   "author": "Flow gallery",
   "scenes": [
-    { "id": "chimney-town", "kind": "task", "title": "煙突のある住宅街", "layers": [
-      { "type": "silhouette", "style": "blocks", "base": 0.88, "color": "#161c36", "spacing": 34, "height": [0.18, 0.32], "width": [14, 24],
-        "window": "#ffd070", "windowDensity": 0.15, "seed": 11 },
-      { "type": "sprites", "rows": [
-          "........S...",
-          ".......SS...",
-          "........CB..",
-          ".....R..CB..",
-          "....RRRRCB..",
-          "...RRRRRRR..",
-          "..RRRRRRRRR.",
-          "..WWWWWWWWW.",
-          "..WYYWWWDDW.",
-          "..WYYWWWDDW.",
-          "..WWWWWWWWW."],
-        "palette": { "S": "#9aa6c0", "C": "#8a4a3a", "B": "#5e3028", "R": "#4a2e48", "W": "#3a3550", "Y": "#ffd070", "D": "#241c30" },
-        "count": 2.6, "speed": [0, 0], "y": [0.5, 0.97], "stand": true, "scale": 1, "seed": 3 },
-      { "type": "sprites", "rows": [
-          ".S..........",
-          "SS..........",
-          ".CB.........",
-          ".CB..R......",
-          ".CBRRRRR....",
-          "..RRRRRRR...",
-          ".RRRRRRRRR..",
-          ".WWWWWWWWW..",
-          ".WDDWWYYYW..",
-          ".WDDWWYYYW..",
-          ".WWWWWWWWW.."],
-        "palette": { "S": "#9aa6c0", "C": "#8a4a3a", "B": "#5e3028", "R": "#2e4a5e", "W": "#3a3a58", "Y": "#ffd070", "D": "#241c30" },
-        "count": 2.3, "speed": [0, 0], "y": [0.5, 0.97], "stand": true, "scale": 1, "seed": 29 },
-      { "type": "sprites", "rows": [
-          "...S........",
-          "..SS........",
-          "...CB.......",
-          "...CB.......",
-          "..RCBRR.....",
-          ".RRRRRRRR...",
-          "RRRRRRRRRR..",
-          ".WWWWWWWWW..",
-          ".WYYWDDWYYW.",
-          ".WYYWDDWYYW.",
-          ".WWWWWWWWWW."],
-        "palette": { "S": "#9aa6c0", "C": "#8a4a3a", "B": "#5e3028", "R": "#5a3a2a", "W": "#40364a", "Y": "#ffd070", "D": "#241c30" },
-        "count": 2.0, "speed": [0, 0], "y": [0.5, 0.97], "stand": true, "scale": 1, "seed": 57 },
-      { "type": "particles", "count": 2, "size": 1, "shape": "dot", "color": ["#8e98b0", "#aab4c8"], "alpha": 0.55,
-        "speed": [5, 11], "angle": 270, "sway": 7, "swayRate": 0.7, "twinkle": 0.3, "y": [0.1, 0.7], "seed": 5 },
-      { "type": "silhouette", "style": "smooth", "base": 0.96, "color": "#0a0e1c", "lit": "#2a3354",
-        "profile": [ { "amp": 0.02, "wavelength": 400, "phase": 0 } ] } ] }
+    {
+      "id": "chimney-sky",
+      "kind": "desk",
+      "title": "煙突の街の夜空",
+      "layers": [
+        {
+          "type": "gradient",
+          "top": "#04060f",
+          "bottom": "#1a2550"
+        },
+        {
+          "type": "particles",
+          "count": 4,
+          "size": 1,
+          "shape": "dot",
+          "color": [
+            "#ffffff",
+            "#bfd8ff",
+            "#ffe9a8"
+          ],
+          "speed": [
+            1,
+            3
+          ],
+          "angle": 0,
+          "twinkle": 0.8,
+          "twinkleRate": 1.5,
+          "y": [
+            0,
+            0.8
+          ]
+        },
+        {
+          "type": "particles",
+          "count": 0.15,
+          "size": 2,
+          "shape": "plus",
+          "color": "#ffffff",
+          "speed": [
+            1,
+            2
+          ],
+          "angle": 0,
+          "twinkle": 0.9,
+          "y": [
+            0,
+            0.5
+          ]
+        },
+        {
+          "type": "orb",
+          "x": 0.22,
+          "y": 0.22,
+          "radius": 44,
+          "color": "#fff4c8",
+          "alpha": 0.9,
+          "pulse": 0.1,
+          "rate": 0.08
+        }
+      ]
+    },
+    {
+      "id": "chimney-town",
+      "kind": "task",
+      "title": "煙突のある住宅街",
+      "layers": [
+        {
+          "type": "silhouette",
+          "style": "blocks",
+          "base": 0.88,
+          "color": "#161c36",
+          "spacing": 34,
+          "height": [
+            0.18,
+            0.32
+          ],
+          "width": [
+            14,
+            24
+          ],
+          "window": "#ffd070",
+          "windowDensity": 0.15,
+          "seed": 11
+        },
+        {
+          "type": "sprites",
+          "rows": [
+            "........S...",
+            ".......SS...",
+            "........CB..",
+            ".....R..CB..",
+            "....RRRRCB..",
+            "...RRRRRRR..",
+            "..RRRRRRRRR.",
+            "..WWWWWWWWW.",
+            "..WYYWWWDDW.",
+            "..WYYWWWDDW.",
+            "..WWWWWWWWW."
+          ],
+          "palette": {
+            "S": "#9aa6c0",
+            "C": "#8a4a3a",
+            "B": "#5e3028",
+            "R": "#4a2e48",
+            "W": "#3a3550",
+            "Y": "#ffd070",
+            "D": "#241c30"
+          },
+          "count": 2.6,
+          "speed": [
+            0,
+            0
+          ],
+          "y": [
+            0.5,
+            0.97
+          ],
+          "stand": true,
+          "scale": 1,
+          "seed": 3
+        },
+        {
+          "type": "sprites",
+          "rows": [
+            ".S..........",
+            "SS..........",
+            ".CB.........",
+            ".CB..R......",
+            ".CBRRRRR....",
+            "..RRRRRRR...",
+            ".RRRRRRRRR..",
+            ".WWWWWWWWW..",
+            ".WDDWWYYYW..",
+            ".WDDWWYYYW..",
+            ".WWWWWWWWW.."
+          ],
+          "palette": {
+            "S": "#9aa6c0",
+            "C": "#8a4a3a",
+            "B": "#5e3028",
+            "R": "#2e4a5e",
+            "W": "#3a3a58",
+            "Y": "#ffd070",
+            "D": "#241c30"
+          },
+          "count": 2.3,
+          "speed": [
+            0,
+            0
+          ],
+          "y": [
+            0.5,
+            0.97
+          ],
+          "stand": true,
+          "scale": 1,
+          "seed": 29
+        },
+        {
+          "type": "sprites",
+          "rows": [
+            "...S........",
+            "..SS........",
+            "...CB.......",
+            "...CB.......",
+            "..RCBRR.....",
+            ".RRRRRRRR...",
+            "RRRRRRRRRR..",
+            ".WWWWWWWWW..",
+            ".WYYWDDWYYW.",
+            ".WYYWDDWYYW.",
+            ".WWWWWWWWWW."
+          ],
+          "palette": {
+            "S": "#9aa6c0",
+            "C": "#8a4a3a",
+            "B": "#5e3028",
+            "R": "#5a3a2a",
+            "W": "#40364a",
+            "Y": "#ffd070",
+            "D": "#241c30"
+          },
+          "count": 2.0,
+          "speed": [
+            0,
+            0
+          ],
+          "y": [
+            0.5,
+            0.97
+          ],
+          "stand": true,
+          "scale": 1,
+          "seed": 57
+        },
+        {
+          "type": "particles",
+          "count": 2,
+          "size": 1,
+          "shape": "dot",
+          "color": [
+            "#8e98b0",
+            "#aab4c8"
+          ],
+          "alpha": 0.55,
+          "speed": [
+            5,
+            11
+          ],
+          "angle": 270,
+          "sway": 7,
+          "swayRate": 0.7,
+          "twinkle": 0.3,
+          "y": [
+            0.1,
+            0.7
+          ],
+          "seed": 5
+        },
+        {
+          "type": "silhouette",
+          "style": "smooth",
+          "base": 0.96,
+          "color": "#0a0e1c",
+          "lit": "#2a3354",
+          "profile": [
+            {
+              "amp": 0.02,
+              "wavelength": 400,
+              "phase": 0
+            }
+          ]
+        }
+      ]
+    }
   ],
   "pairs": [
-    { "name": "煙突の街の星空", "desk": "stars", "task": "chimney-town" },
-    { "name": "煙突の街の雪", "desk": "snow", "task": "chimney-town" }
+    {
+      "name": "煙突の街の星空",
+      "desk": "chimney-sky",
+      "task": "chimney-town"
+    },
+    {
+      "name": "煙突の街の雪",
+      "desk": "snow",
+      "task": "chimney-town"
+    }
   ]
 }
