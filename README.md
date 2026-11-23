@@ -22,6 +22,13 @@ irm https://raw.githubusercontent.com/kodair918-del/flow-releases/main/install.p
 
 ダウンロード、チェックサムの確認、`%LOCALAPPDATA%\Flow` への配置、スタートメニューへの登録、起動まで自動です。
 
+[Scoop](https://scoop.sh) を使っている人は、こちらでも入れられます（[scoop-flow](https://github.com/kodair918-del/scoop-flow)）:
+
+```powershell
+scoop bucket add flow https://github.com/kodair918-del/scoop-flow
+scoop install flow
+```
+
 - 壁紙: Windows 10 (1809) 以降の 64 ビット
 - タスクバーの景色: Windows 11（版を問わず試します。動かない版では、タスクバーには何も変えず、壁紙だけ動きます）
 
