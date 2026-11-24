@@ -1,10 +1,10 @@
 # Flow
 
 **デスクトップの壁紙と、タスクバー（Mac は Dock）に、ドット絵風の景色を描くアプリです。**
-星・雪・雨・蛍・桜・雲・オーロラ・流星群・霧・灯籠、川・砂・海・山・街・草原・雪原・森。1日を2時間ずつに分けて景色を切り替えたり、似合う組み合わせを「おまかせ」で入れ替えたりできます。
+星・雪・雨・蛍・桜・雲・オーロラ・流星群・霧・灯籠、川・砂・海・山・街・草原・雪原・森。1日を2時間ずつに分けて景色を切り替えたり、似合う組み合わせを「おまかせ」で入れ替えたり、時刻・季節・天気にそって景色が移ろう「物語モード」にしたりできます。
 景色は、テキストファイル1つで**自分で足せます**（AI に作ってもらうこともできます）。
 
-*Flow draws pixel-art scenery on your wallpaper and on the taskbar (Dock on Mac): stars, snow, rain, fireflies, sakura, clouds, aurora, meteors, fog, lanterns, rivers, sea, mountains, a city, a forest... A schedule changes the scene every two hours, "random" mixes matching pairs, and you can add your own scenes with a single text file. Free. Windows 10/11 and macOS 13+.*
+*Flow draws pixel-art scenery on your wallpaper and on the taskbar (Dock on Mac): stars, snow, rain, fireflies, sakura, clouds, aurora, meteors, fog, lanterns, rivers, sea, mountains, a city, a forest... A schedule changes the scene every two hours, "random" mixes matching pairs, "story mode" follows the time of day, the season and the weather (with the real constellations at night), and you can add your own scenes with a single text file. Free. Windows 10/11 and macOS 13+.*
 
 > 入れる前に: 署名のないアプリなので、何をするか・何をしないか・確かめ方を [**Flow は安全？（docs/TRUST.md）**](docs/TRUST.md) に全部書きました。
 
@@ -47,10 +47,19 @@ macOS 13 以降。Apple の署名はないので、スクリプトが警告を�
 ![設定](docs/images/settings-windows.png)
 
 - **オン・オフ**: アイコンをダブルクリック（Windows）／ `Ctrl+Alt+F`（Windows）・`⌃⌥⌘F`（Mac）。コマンドでも切り替えられます（`FlowTray.exe --off`、Mac は `Flow --toggle`）。
-- **景色の決め方**: 自分で選ぶ／おまかせ（似合う組み合わせ）／スケジュール（24時間の円を2時間ずつ12に分けて、それぞれに景色を割り当て）
+- **景色の決め方**: 自分で選ぶ／おまかせ（似合う組み合わせ）／スケジュール（24時間の円を2時間ずつ12に分けて、それぞれに景色を割り当て）／物語モード（下の「物語モード」を見てください）
 - 色（時刻に合わせる・深海・アンバー・ネオン・燠火）、時計、クリックの反応、起動時に開始、更新
 
-景色が変わるときは、約1.6秒かけてなめらかに溶け合います。
+景色が変わるときは、ふつうは約1.6秒かけてなめらかに溶け合います。
+
+### 物語モードと、景色の演出
+
+- **物語モード**: 朝・昼・夕・夜（日の出と日の入りに合わせて）、季節（春は桜、夏は蛍や灯籠、冬は雪やオーロラ）、天気から、壁紙とタスクバー（Dock）の景色を、Flow が自動で組み立てます。夜は、いま実際に空に出ている星座（冬のオリオン座、夏のさそり座など）が星空に重なります。天気は、日付から作る目安です。
+- **切り替えの演出**: 景色が変わるとき、雪の景色へは雪が降って上書きし、雨・霧へは霧が流れ込み、川や海の地面へは波が洗い、それ以外は朝やけの光の帯が左から右へ通りすぎます（2.4 秒）。
+- **景色の細かい演出**: 雨の空でときどき雷が光る（点滅のくり返しはなく、やわらかく消えます）、星空の月が今日の本物の月の形になる、雲の空のとき地面を雲の影が流れる、流星の尾が長くなる。
+- **おまかせ: 合うものだけ**: 登録されていなくても、合う組み合わせ（雪と砂丘のような不自然なものを除く）から選びます。
+
+どれも、メニュー（または設定画面）で入り切りでき、はじめはオフです。
 
 ## 景色を足す（追加パック）
 
